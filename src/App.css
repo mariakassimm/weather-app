@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, 
+    #87CEEB,
+    #00BFFF,
+    #1E90FF,
+    #030448,
+    #6460b2,
+    #8086be,
+    #2e3030,
+    #1C1C1C,
+    #0D0D0D,
+    #2A2A2A
+  );
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite, shimmerEffect 4s infinite alternate;
+}
+
+.app {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: shimmeringEffect 7s infinite alternate;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #090908;
+  margin-bottom: 30px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6), 0 0 25px rgba(255, 255, 255, 0.4);
+}
+
+.search-box input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.search-box input:focus {
+  border-color: #050505;
+  outline: none;
+  box-shadow: 0 0 12px rgba(15, 15, 15, 0.7);
+}
+
+.error {
+  color: red;
+  margin-top: 15px;
+  font-size: 1.2rem;
+}
+
+.weather-info {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.weather-info h2 {
+  font-size: 2.5rem;
+  color: #e3e1db;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.weather-info p {
+  font-size: 1.4rem;
+  margin: 15px 0;
+  color: #ddd;
+}
+
+.weather-info strong {
+  font-weight: bold;
+}
+
+@keyframes shimmeringEffect {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.sunny {
+  background: ( #deddda, #222121);
+  color: #151414;
+}
+
+.sunny h1 {
+  color: #f1ede9;
+}
+
+.sunny .weather-info {
+  background: ( #000000, #565554);
+}
+
+.rainy {
+  background:( #0288d1, #01579b);
+  color: #ffffff;
+}
+
+.rainy h1 {
+  color: #81d4fa;
+}
+
+.rainy .weather-info {
+  background: ( #0288d1, #81d4fa);
+}
+
+.smoky {
+  background: ( #607d8b, #455a64);
+  color: #ffffff;
+}
+
+.smoky h1 {
+  color: #cfd8dc;
+}
+
+.smoky .weather-info {
+  background: linear-gradient(145deg, #607d8b, #cfd8dc);
+}
+
+.snowy {
+  background: linear-gradient(135deg, #80deea, #0288d1);
+  color: #01579b;
+}
+
+.snowy h1 {
+  color: #0288d1;
+}
+
+.snowy .weather-info {
+  background: linear-gradient(145deg, #80deea, #0288d1);
+}
+
+@media (max-width: 600px) {
+  .app {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .weather-info p {
+    font-size: 1.1rem;
+  }
+
+  .search-box input {
+    font-size: 1rem;
+  }
+}
